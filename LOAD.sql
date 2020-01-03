@@ -36,3 +36,25 @@ CREATE EXTERNAL TABLE world_population (
  )
 ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
 STORED AS TEXTFILE;
+
+
+
+Guión como separador de campo y comillas simples como caracteres de comillas
+
+
+world_rank-country-population-world-extra_data
+
+CREATE TABLE world_population (
+  world_rank INT,
+  country STRING,
+  population BIGINT,
+  world DOUBLE,
+  extra_data STRING
+ )
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
+WITH SERDEPROPERTIES
+(
+    "separatorChar" = "-",
+    "quoteChar"     = "'"
+)
+STORED AS TEXTFILE;
