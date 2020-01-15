@@ -32,6 +32,25 @@ SELECT * FROM employee;
  SELECT MIN(salary) from employee;
  
  SELECT COUNT(*) from employee;
+ 
+ 
+ -----------------------------------------------------------------------------------------
+Hive Partitioned table  Create a partition table in HIVE
+
+CREATE table peoples (
+name string,
+last_name string,
+stable string
+)
+ROM FORMAT DELIMITED
+FIELDS TERMINATED BY ',';
+
+LOAD DATA LOCAL INPATH '/USER/PEOPLES' OVEWRITE INTO TABLE PEOPLES;
+
+CREATE table part_peoples (
+name string,
+last_name string,
+)PARTITCIONED BY (stable string);
 
 
 
