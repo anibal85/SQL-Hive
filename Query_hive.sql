@@ -21,7 +21,7 @@ LOAD DATA LOCATL INPATH '/user/employee' OVERWRITE INTO TABLE employee;
 
 SELECT * FROM employee;
 
----------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
 
  Hive Aggregation Functions
  
@@ -34,7 +34,7 @@ SELECT * FROM employee;
  SELECT COUNT(*) from employee;
  
  
- -----------------------------------------------------------------------------------------
+ ---------------------------------------------------------------------------------------------------------
 Hive Partitioned table  Create a partition table in HIVE
 
 CREATE table peoples (
@@ -50,7 +50,8 @@ LOAD DATA LOCAL INPATH '/USER/PEOPLES' OVEWRITE INTO TABLE PEOPLES;
 CREATE table part_peoples (
 name string,
 last_name string,
-)PARTITCIONED BY (stable string);
+)PARTITIONED BY (stable string);
 
+insert overwrite table part_peoples partitioned(state) select * from peoples;
 
 
