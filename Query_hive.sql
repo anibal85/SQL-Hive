@@ -24,6 +24,14 @@ SELECT * FROM employee;
 ---------------------------------------------------------------------------------------
 
  Hive Aggregation Functions
+ 
+ SELECT SUM (salary) from employee;
+ 
+ SELECT MAX(salary) from employee;
+ 
+ SELECT MIN(salary) from employee;
+ 
+ SELECT COUNT(*) from employee;
 
 
 
